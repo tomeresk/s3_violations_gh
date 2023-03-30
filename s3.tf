@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "data" {
   force_destroy = true
   tags = merge({
     Name        = "prefix-data"
-    Environment = local.resource_prefix.value
+    Environment = valuevalue
     }, {
     git_commit           = "4d57f83ca4d3a78a44fb36d1dcf0d23983fa44f5"
     git_file             = "terraform/aws/s3.tf"
@@ -26,7 +26,7 @@ resource "aws_s3_bucket_object" "data_object" {
   source = "resources/customer-master.xlsx"
   tags = merge({
     Name        = "prefix-customer-master"
-    Environment = local.resource_prefix.value
+    Environment = valuevalue
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
@@ -48,7 +48,7 @@ resource "aws_s3_bucket" "financials" {
   force_destroy = true
   tags = merge({
     Name        = "prefix-financials"
-    Environment = local.resource_prefix.value
+    Environment = valuevalue
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
@@ -73,7 +73,7 @@ resource "aws_s3_bucket" "operations" {
   force_destroy = true
   tags = merge({
     Name        = "prefix-operations"
-    Environment = local.resource_prefix.value
+    Environment = valuevalue
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
@@ -127,7 +127,7 @@ resource "aws_s3_bucket" "logs" {
   force_destroy = true
   tags = merge({
     Name        = "prefix-logs"
-    Environment = local.resource_prefix.value
+    Environment = valuevalue
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/s3.tf"
