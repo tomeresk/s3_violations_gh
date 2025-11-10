@@ -6,3 +6,11 @@ resource "aws_s3_bucket" "data" {
   bucket        = "prefix-data"
   force_destroy = true
 }
+
+resource "aws_s3_bucket_versioning" "data" {
+  bucket = aws_s3_bucket.data.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
